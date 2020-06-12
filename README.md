@@ -1,0 +1,2 @@
+# fullstackopen_palautusrepo
+FullStackOpen2020 palautusrepositorio
