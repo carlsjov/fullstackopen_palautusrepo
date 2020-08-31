@@ -1,21 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-const Hello = (props) => {
-  return (
-    <>
-      <p>
-        Hello {props.name}, you are {props.age} years old
-      </p>
-    </>
-  )
-}
 
-const Footer = () => {
+const Hello = ({ name, age }) => {
+
+  const bornYear = () => new Date().getFullYear() - age
+  
+
   return (
-    <>
-      greeting app created by 
-      <a href="https://github.com/carlsjov">carlsjov</a>
-    </>
+    <div>
+      <p>
+        Hello {name}, you are {age} years old
+      </p>
+      <p>So you were probably born {bornYear()}</p>
+    </div>
   )
 }
 
@@ -25,11 +22,11 @@ const App = () => {
   return (
     <>
       <h1>Greetings</h1>
-      <Hello name="Maya" age={26+ika}/>
+      <Hello name="Maya" age={26+10}/>
       <Hello name={nimi} age ={ika}/>
-      <Footer />
     </>
   )
 }
+
 
 ReactDOM.render(<App />, document.getElementById('root'))
